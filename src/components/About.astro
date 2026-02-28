@@ -1,0 +1,286 @@
+---
+
+---
+<div class=logo>
+    <h2>Acerca de nosotros</h2>
+</div>
+<div class="quienes-somos">
+    <div class="quienes-somos-container">
+    <div class="quienes-somos-img">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOQE5E2aebEz6QnXwbNkS62bG_LqEZ4ZBayg&s" alt="quienes-somos" class="quienes-somos-img">
+    </div>
+    <div class="quienes-somos-text">
+    <h1>Quienes somos?</h1>
+    <p>somos una empresa de montacarmas que se encarga de  blablabla blablabla blablablabla<br>blablabla  blablablablablablablablablablablablablabla blablabla blablabla blablabla</p>
+    </div>
+    </div>
+</div>
+<div class='historia'>
+    <div class="historia-container">
+    <div class="historia-text">
+    <h2>Nuestra Historia</h2>
+    <p>la empresa se fundo en el año 2000 por blablabla</p>
+    </div>
+    <div class="historia-img">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElnqax8pJo_OCM6nwMjjIs9VN_jhtS606_w&s" alt="historia" class="historia-img">
+    </div>
+</div>
+</div>
+<div class='mision-vision-valores'>
+<div class='mision'>
+    <h2>Nuestra Mision</h2>
+    <img src="https://png.pngtree.com/png-vector/20190514/ourmid/pngtree-img-file-format-icon-design-png-image_1041703.jpg" alt="mision" class="mision-img">
+    <p>El texto que explique la mision de esta empresa(si tiene)</p>
+</div>
+<div class='vision'>
+    <h2>Nuestra Vision</h2>
+    <p>Texto que explica la vision de la empresa </p>
+    <img src="https://png.pngtree.com/png-vector/20190514/ourmid/pngtree-img-file-format-icon-design-png-image_1041703.jpg" alt="vision" class="vision-img">
+</div>
+<!--No se si la empresa tenga valores, realmente no se cuanta informacion tenemos de la empresa -->
+<div class='valores'>
+    <h2>Nuestros Valores</h2>
+    <img src="https://png.pngtree.com/png-vector/20190514/ourmid/pngtree-img-file-format-icon-design-png-image_1041703.jpg" alt="valores" class="valores-img">
+    <p>pueden ser tarjetitas o no se dependera de si la empresa tiene valores</p>
+</div>
+<div>
+<style>
+    .logo{
+    margin: 0;
+    padding: 0;
+    background-image: url('https://cdn.pixabay.com/photo/2020/05/27/17/08/building-5228101_1280.jpg');
+    background-size: cover;       /* Cubre toda la pantalla */
+    background-position: center;  /* Centra la imagen */
+    background-attachment: fixed; /* Fija la imagen al hacer scroll */
+    background-repeat: no-repeat; /* No repite la imagen */
+    height: 50vh;                /* Altura igual al 100% de la ventana */
+    position: relative;
+    }
+    .logo h2{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%); /* ⭐ centra perfecto */
+    }
+    .quienes-somos{
+        width: 100%;
+        padding: 30px;  /* mantiene la altura parecida */
+        background: #1B2A4A;
+        }
+        .quienes-somos-text h1{
+            color: rgb(243, 122, 23);
+            font-size: 30px;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+            text-align: left;
+        }
+
+        .quienes-somos-text h1::after{
+            content: '';
+            display: block;
+            width: 200px;
+            height: 5px;
+            background-color: #F5A623; /* Personalizar color */
+            margin: 0px 0 0 0px; /* Centrar debajo del título */
+            clip-path: polygon(
+            0 0,
+            100% 0,
+            90% 50%,
+            100% 100%,
+            0 100%
+            );
+        }
+        .quienes-somos-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px; /* más aire visual */
+        flex-direction: row-reverse;
+        }
+        .quienes-somos-text{
+            flex: 1;
+        }
+
+        .quienes-somos-text p{
+            color: #fff;
+            font-size: 20px;
+            line-height: 1.5;
+            font-family: 'Roboto', sans-serif;
+            text-align: left;
+        }
+        .quienes-somos-img{
+            flex: 1;
+            border-width: 5px;
+        }
+        .quienes-somos-img img{
+            width: auto;   /* controla tamaño fijo */
+            height: 400px;
+            border-radius: 10px;
+        }
+        /*historia part*/
+        .historia{
+        width: 100%;
+        padding: 30px;  /* mantiene la altura parecida */
+        background: #F5A623;
+        }
+        .historia-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0px; /* más aire visual */
+            flex-direction: row-reverse;
+        }
+         .historia-text h2{
+            color: #1B2A4A;
+            font-size: 30px;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+            text-align: left;
+        }
+
+        .historia-text h2::after{
+            content: '';
+            display: block;
+            width: 200px;
+            height: 5px;
+            margin: 0px 0 0 0px; /* Centrar debajo del título */
+            clip-path: polygon(
+            0 0,
+            100% 0,
+            90% 50%,
+            100% 100%,
+            0 100%
+            );
+            background-color: rgb(233, 123, 20); /* Personalizar color */
+        }
+
+        .historia-text p{
+            color: #333;
+            font-size: 20px;
+            line-height: 1.5;
+            font-family: 'Roboto', sans-serif;
+            text-align: left;
+        }
+        .historia-img{
+            flex: 0.5;
+            border-width: 5px;
+        }
+        .historia-img img{
+            width: 500px;   /* ancho fijo en vez de auto */
+            height: 350px;
+            border-radius: 10px;
+            object-fit: cover;  /* para que no se deforme */
+        }
+        /* Mision, vision y valores */
+        .mision-vision-valores {
+        display: flex;
+        flex-direction: row; /* explícito para que vaya en fila horizontal */
+        gap: 20px;
+        justify-content: center;
+        padding: 40px;
+        }
+        .mision{
+        margin-bottom: 20px;
+        padding: 10px;
+        border-color: #e0f007;
+        border-bottom-radius: 10px;
+        box-bottom-shadow: 0 0 10px #ergb(7, 7, 4)/* Sombra personalizada */
+        }
+         .mision h2{
+            color: blue;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .mision h2::after{
+            content: '';
+            display: block;
+            width: 150px;
+            height: 5px;
+            background-color: rgb(233, 123, 20); /* Personalizar color */
+            margin: 5px auto 0; /* Centrar debajo del título */
+        }
+
+        .mision p{
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+        }
+        .vision{
+        margin-bottom: 20px;
+        padding: 10px;
+        border-color: #e0f007;
+        border-bottom-radius: 10px;
+        box-bottom-shadow: 0 0 10px #ergb(7, 7, 4)/* Sombra personalizada */
+        }
+         .vision h2{
+            color: blue;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .vision h2::after{
+            content: '';
+            display: block;
+            width: 150px;
+            height: 5px;
+            background-color: rgb(233, 123, 20); /* Personalizar color */
+            margin: 5px auto 0; /* Centrar debajo del título */
+        }
+
+        .vision p{
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+        }
+        .valores{
+        margin-bottom: 20px;
+        padding: 10px;
+        border-color: #e0f007;
+        border-bottom-radius: 10px;
+        box-bottom-shadow: 0 0 10px #ergb(7, 7, 4)/* Sombra personalizada */
+        }
+         .valores h2{
+            color: blue;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .valores h2::after{
+            content: '';
+            display: block;
+            width: 150px;
+            height: 5px;
+            background-color: rgb(233, 123, 20); /* Personalizar color */
+            margin: 5px auto 0; /* Centrar debajo del título */
+        }
+
+        .valores p{
+            color: #333;
+            font-size: 16px;
+            line-height: 1.5;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+        }
+
+
+        /*tipo de letras*/
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+</style>

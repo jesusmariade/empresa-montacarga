@@ -1,0 +1,378 @@
+<section class="contacto-section">
+  <canvas id="bg-canvas"></canvas>
+  <div class="contacto-wrapper">
+
+    <!-- FORMULARIO -->
+    <div class="form-card">
+      <span class="form-tag">📬 Escríbenos</span>
+      <h2>¿Tienes alguna duda?</h2>
+      <p class="form-sub">Ingresa tus datos y nuestro equipo se contactará contigo lo más rápido posible.</p>
+
+      <form action="form" method="POST" class="form-grid">
+        <div class="field">
+          <label for="name">Nombre completo</label>
+          <input type="text" id="name" name="name" placeholder="Juan Pérez" required />
+        </div>
+
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="correo@empresa.com" required />
+        </div>
+
+        <div class="field">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="55 1234 5678" required />
+        </div>
+
+        <div class="field field--full">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" placeholder="Cuéntanos qué necesitas..." required></textarea>
+        </div>
+
+        <div class="field field--full">
+          <button type="submit" class="btn-enviar">Enviar mensaje →</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- SIDEBAR INFO -->
+    <div class="info-card">
+      <h3>Horarios de atención</h3>
+
+      <div class="horario-item">
+        <span class="horario-dia">Lunes – Viernes</span>
+        <span class="horario-hora">8:00 AM – 6:00 PM</span>
+      </div>
+      <div class="horario-item">
+        <span class="horario-dia">Sábados</span>
+        <span class="horario-hora">9:00 AM – 2:00 PM</span>
+      </div>
+      <div class="horario-item sin-atencion">
+        <span class="horario-dia">Domingos</span>
+        <span class="horario-hora">Sin atención</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="contacto-extra">
+        <div class="extra-item">
+          <span class="extra-icon">📞</span>
+          <div>
+            <div class="extra-label">Teléfono directo</div>
+            <div class="extra-val">55 0000 0000</div>
+          </div>
+        </div>
+        <div class="extra-item">
+          <span class="extra-icon">📧</span>
+          <div>
+            <div class="extra-label">Correo</div>
+            <div class="extra-val">contacto@empresa.com</div>
+          </div>
+        </div>
+        <div class="extra-item">
+          <span class="extra-icon">📍</span>
+          <div>
+            <div class="extra-label">Ubicación</div>
+            <div class="extra-val">Sepa la bola por ahora</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap');
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  :root {
+    --navy: #1B2A4A;
+    --yellow: #F5A623;
+    --yellow-dark: #d4891a;
+    --dark: #2D2D2D;
+    --light: #F8F8F6;
+    --white: #FFFFFF;
+  }
+  .p { font-family: 'Roboto', sans-serif;}
+  .contacto-section {
+    position: relative;
+    background: #0f1c33;
+    padding: 5rem 4rem;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  #bg-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .contacto-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2rem;
+    max-width: 1250px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* FORM CARD */
+  .form-card {
+    animation: fadeIn 1s ease-out;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 3rem;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 8px 40px rgba(27,42,74,0.07);
+  }
+
+  .form-tag {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--navy);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.28rem 0.8rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .form-card h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.4rem;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 0.6rem;
+  }
+
+  .form-sub {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .field--full { grid-column: 1 / -1; }
+
+  .field label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+
+  .field input,
+  .field textarea {
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    color: var(--dark);
+    background: var(--light);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    resize: none;
+  }
+
+  .field input:focus,
+  .field textarea:focus {
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 3px rgba(245,166,35,0.15);
+    background: var(--white);
+  }
+
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: #bbb;
+  }
+
+  .btn-enviar {
+    width: 100%;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-enviar:hover {
+    background: var(--yellow);
+    color: var(--navy);
+    transform: translateY(-2px);
+  }
+
+  /* INFO CARD */
+  .info-card {
+    animation: fadeIn 1.2s ease-out;
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    color: var(--white);
+  }
+
+  .info-card h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    color: var(--yellow);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .horario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .horario-dia { font-size: 0.88rem; color: rgba(255,255,255,0.7); font-weight: 500; }
+  .horario-hora { font-size: 0.88rem; color: var(--white); font-weight: 700; }
+
+  .sin-atencion .horario-hora {
+    color: rgba(255,255,255,0.35);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 1.8rem 0;
+  }
+
+  .contacto-extra { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  .extra-item { display: flex; align-items: flex-start; gap: 1rem; }
+
+  .extra-icon { font-size: 1.3rem; margin-top: 2px; }
+
+  .extra-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 0.2rem;
+  }
+
+  .extra-val { font-size: 0.9rem; color: var(--white); font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .contacto-section { padding: 3rem 1.5rem; }
+    .contacto-wrapper { grid-template-columns: 1fr; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-card { padding: 2rem 1.5rem; }
+  }
+</style>
+
+<script>
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+
+  let width, height, dots;
+  const SPACING = 45;
+  const YELLOW = '#F5A623';
+  const BLUE = '#2a4a7f';
+
+  function resize() {
+    width = canvas.width = canvas.offsetWidth;
+    height = canvas.height = canvas.offsetHeight;
+    initDots();
+  }
+
+  function initDots() {
+    dots = [];
+    const cols = Math.ceil(width / SPACING) + 1;
+    const rows = Math.ceil(height / SPACING) + 1;
+
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        dots.push({
+          x: c * SPACING,
+          y: r * SPACING,
+          phase: Math.random() * Math.PI * 2,   // fase inicial aleatoria
+          speed: 0.4 + Math.random() * 0.6,     // velocidad del pulso
+          baseRadius: 1.2,
+          pulseRadius: 2.5 + Math.random() * 2, // tamaño máximo del pulso
+          isYellow: Math.random() < 0.08,        // ~8% de puntos son amarillos
+        });
+      }
+    }
+  }
+
+  function draw(t) {
+    ctx.clearRect(0, 0, width, height);
+
+    // Fondo
+    ctx.fillStyle = '#0f1c33';
+    ctx.fillRect(0, 0, width, height);
+
+    dots.forEach(dot => {
+      const pulse = (Math.sin(t * 0.001 * dot.speed + dot.phase) + 1) / 2; // 0 a 1
+      const radius = dot.baseRadius + pulse * dot.pulseRadius;
+      const alpha = 0.15 + pulse * 0.7;
+
+      ctx.beginPath();
+      ctx.arc(dot.x, dot.y, radius, 0, Math.PI * 2);
+
+      if (dot.isYellow) {
+        ctx.fillStyle = YELLOW;
+        ctx.globalAlpha = alpha;
+      } else {
+        ctx.fillStyle = BLUE;
+        ctx.globalAlpha = 0.1 + pulse * 0.35;
+      }
+
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    });
+
+    // Onda de pulso circular que viaja desde el centro ora que una ondaaa ooo que bonita
+    const cx = width / 2;
+    const cy = height / 2;
+    const maxR = Math.sqrt(cx * cx + cy * cy);
+    const waveR = ((t * 0.05) % maxR);
+    const waveAlpha = Math.max(0, 0.12 - (waveR / maxR) * 0.12);
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, waveR, 0, Math.PI * 2);
+    ctx.strokeStyle = YELLOW;
+    ctx.lineWidth = 1;
+    ctx.globalAlpha = waveAlpha;
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  requestAnimationFrame(draw);
+</script>

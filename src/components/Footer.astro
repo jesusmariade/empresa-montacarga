@@ -1,0 +1,53 @@
+---
+
+---
+
+<div class="Footer">
+    <div class="copyright">
+    <h4>® 2026 empresa que no sabemos el nombre</h4>
+    </div>
+    <div class=links>
+    <a href="/Terminos-y-Condiciones">Terminos y Condiciones</a>
+    <a href="/Aviso-de-privacidad">Aviso de Privacidad</a>
+    </div>
+</div>
+
+<style>
+.Footer{
+    background: linear-gradient(90deg, #1B263B, #223A5E);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    color: white;
+    text-align: center;
+}
+.copyright{
+    padding-top: 20px;
+}
+.links{
+    padding-bottom: 20px;
+
+}
+.links a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: 0.3s ease;
+    position: relative;
+    padding: 6px 0;
+}
+.links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background-color: #FFD60A;
+    transition: width 0.3s ease;
+}
+.links a:hover{
+    color: #ecb10c;
+}
+.links a:hover::after {
+    width: 100%;
+}
+</style>

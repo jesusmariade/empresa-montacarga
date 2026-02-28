@@ -1,0 +1,113 @@
+<div class="header">
+    <a href="/" class="logo">Logo Empresa</a>
+
+    <nav class="nav">
+        <a href="./Catalogo">Montacargas</a>
+        <a href="./Nosotros">Nosotros</a>
+        <a href="./Contacto" class='contacto'>Contactanos!</a>
+    </nav>
+</div>
+
+<style>
+body {
+    margin: 0;
+    background-color: #F4F6F8;
+}
+
+/* HEADER BASE */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 50px;
+    font-family: 'Century Gothic', sans-serif;
+    background: linear-gradient(90deg, #1B263B, #223A5E);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* HEADER SCROLL EFFECT */
+.header.scrolled {
+    padding: 16px 50px;
+    background: #162032;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+}
+
+/* LOGO */
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.85;
+}
+
+/* NAV LINKS */
+.nav a {
+    margin-left: 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #E0E1DD;
+    text-decoration: none;
+    transition: 0.3s ease;
+    position: relative;
+    padding: 6px 0;
+}
+
+/* Línea animada */
+.nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -6px;
+    background-color: #FFD60A;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.nav a:hover {
+    color: #FFD60A;
+}
+
+/* LINK ACTIVO */
+.nav a.active {
+    color: #FFD60A;
+}
+
+.nav a.active::after {
+    width: 100%;
+}
+
+/* BOTÓN CONTÁCTANOS */
+.nav a.contacto {
+    background-color: #FFD60A;
+    color: #1B263B;
+    padding: 8px 18px;
+    border-radius: 6px;
+    margin-left: 40px;
+    transition: 0.3s ease;
+}
+
+.nav a.contacto:hover {
+    background-color: #F4B400;
+    transform: translateY(-2px);
+}
+
+.nav a.contacto::after {
+    display: none;
+}
+</style>
