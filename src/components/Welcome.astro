@@ -1,23 +1,295 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+// HeroVideo.astro
+// Cambia estos valores:
+const titulo = "Soluciones en Montacargas";
+const subtitulo = "Potencia, precisión y confiabilidad para tu operación industrial.";
 ---
 
-<div id="container">
-  <h1>empresa que no sabemos su nombre</h2>
-  <h3>slogan de la empresa</h3>
-  <p>fondo solo por ahora,quiero que sea un video de los montacargas o algo asi</p>
-</div>
+<section class="hero">
+  <!-- Video de fondo -->
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="/videos/Montacargaloop1.mp4" type="video/mp4">
+    <source src="/videos/Montacargaloop2.mp4" type="video/mp4">
+  </video>
+
+  <!-- Capas de efecto -->
+  <div class="overlay"></div>
+  <div class="gradient-bottom"></div>
+  <div class="gradient-top"></div>
+  <div class="noise"></div>
+
+  <!-- Líneas industriales decorativas -->
+  <div class="grid-lines">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Contenido -->
+  <div class="hero-content">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      <p>Operando desde sepa la vrg jeje</p>
+    </div>
+    <h1 class="titulo">{titulo}</h1>
+    <p class="subtitulo">{subtitulo}</p>
+    <div class="divider"></div>
+  </div>
+
+  <!-- Indicador scroll -->
+  <div class="scroll-indicator">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
 <style>
-#container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 70vh;;
-  background-image: url('../assets/background.svg');
-  background-size: cover;
-  background-position: center;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;800&family=Barlow:wght@300;400&display=swap');
+
+  :root {
+    --amarillo: #F5A800;
+    --blanco: #F0EDE8;
+    --negro: #0A0A0A;
+    --gris: #1A1A1A;
+  }
+
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-family: 'Barlow', sans-serif;
+    background: var(--negro);
+  }
+
+  /* ── VIDEO ── */
+  .background-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Parallax suave via scale */
+    transform: scale(1.08);
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+  /* ── OVERLAYS ── */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 8, 8, 0.58);
+    z-index: 1;
+  }
+
+  .gradient-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to top, var(--negro) 0%, transparent 100%);
+    z-index: 2;
+  }
+
+  .gradient-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 25%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%);
+    z-index: 2;
+  }
+
+  /* Textura grain */
+  .noise {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    pointer-events: none;
+  }
+
+  /* ── LÍNEAS GRID INDUSTRIALES ── */
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8%;
+    pointer-events: none;
+  }
+
+  .grid-lines span {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(245,168,0,0.12), transparent);
+    animation: fadeInLine 1.5s ease forwards;
+    opacity: 0;
+  }
+
+  .grid-lines span:nth-child(1) { animation-delay: 0.2s; }
+  .grid-lines span:nth-child(2) { animation-delay: 0.4s; }
+  .grid-lines span:nth-child(3) { animation-delay: 0.6s; }
+  .grid-lines span:nth-child(4) { animation-delay: 0.8s; }
+
+  @keyframes fadeInLine {
+    to { opacity: 1; }
+  }
+
+  /* ── CONTENIDO ── */
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 0 8%;
+    max-width: 860px;
+  }
+
+  /* Eyebrow */
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: slideUp 0.7s ease 0.3s forwards;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--amarillo);
+    box-shadow: 0 0 10px var(--amarillo);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 6px var(--amarillo); }
+    50% { box-shadow: 0 0 18px var(--amarillo); }
+  }
+
+  .eyebrow p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amarillo);
+    margin: 0;
+  }
+
+  /* Título */
+  .titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: var(--blanco);
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: slideUp 0.8s ease 0.55s forwards;
+  }
+
+  /* Resalte amarillo en última palabra */
+  .titulo::after {
+    content: '';
+  }
+
+  /* Subtítulo */
+  .subtitulo {
+    font-family: 'Barlow', sans-serif;
+    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+    font-weight: 300;
+    color: rgba(240, 237, 232, 0.72);
+    max-width: 480px;
+    line-height: 1.6;
+    margin: 0 0 28px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease 0.8s forwards;
+  }
+
+  /* Divider */
+  .divider {
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--amarillo), transparent);
+    animation: expandWidth 1s ease 1.1s forwards;
+  }
+
+  @keyframes expandWidth {
+    to { width: 120px; }
+  }
+
+  /* ── ANIMACIONES ── */
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ── SCROLL INDICATOR ── */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    right: 8%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.4s forwards;
+  }
+
+  .scroll-indicator span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: rgba(240, 237, 232, 0.4);
+    writing-mode: vertical-rl;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(245,168,0,0.6), transparent);
+    animation: scrollPulse 2s ease-in-out infinite 1.6s;
+  }
+
+  @keyframes scrollPulse {
+    0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+    50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    100% { transform: scaleY(1); transform-origin: top; opacity: 0; }
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
 </style>
+
+<script>
+  // Efecto parallax suave al hacer scroll
+  const video = document.querySelector('.background-video') as HTMLVideoElement;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const hero = document.querySelector('.hero') as HTMLElement;
+    const heroHeight = hero?.offsetHeight ?? 0;
+
+    if (scrollY < heroHeight) {
+      const progress = scrollY / heroHeight; // 0 → 1
+      const translateY = progress * 60; // mueve el video hacia abajo
+      const scale = 1.08 + progress * 0.04;
+      video.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+    }
+  }, { passive: true });
+</script>
