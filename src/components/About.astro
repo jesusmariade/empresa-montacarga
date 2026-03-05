@@ -1,286 +1,974 @@
----
+<!-- HERO -->
+<section class="hero" id="about-hero">
+  <div class="hero__parallax" id="hero-parallax"
+       style="background-image:url('https://cdn.pixabay.com/photo/2020/05/27/17/08/building-5228101_1280.jpg')">
+  </div>
+  <div class="hero__overlay"></div>
 
----
-<div class=logo>
-    <h2>Acerca de nosotros</h2>
-</div>
-<div class="quienes-somos">
-    <div class="quienes-somos-container">
-    <div class="quienes-somos-img">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOQE5E2aebEz6QnXwbNkS62bG_LqEZ4ZBayg&s" alt="quienes-somos" class="quienes-somos-img">
+  <!-- grain texture -->
+  <div class="hero__grain" aria-hidden="true"></div>
+
+  <div class="hero__inner">
+    <div class="hero__meta reveal">
+      <span class="hero__line"></span>
+      <span class="hero__meta-text">Sobre la empresa</span>
+      <span class="hero__line"></span>
     </div>
-    <div class="quienes-somos-text">
-    <h1>Quienes somos?</h1>
-    <p>somos una empresa de montacarmas que se encarga de  blablabla blablabla blablablabla<br>blablabla  blablablablablablablablablablablablablabla blablabla blablabla blablabla</p>
+    <h1 class="hero__title reveal reveal--delay1">
+      Acerca de<br/>
+      <em>nosotros</em>
+    </h1>
+    <p class="hero__sub reveal reveal--delay2">
+      Líderes en logística industrial · México
+    </p>
+  </div>
+
+  <!-- floating corner badge -->
+  <div class="hero__corner-badge reveal reveal--delay3">
+    <svg class="hero__corner-ring" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 6"/>
+    </svg>
+    <span class="hero__corner-text">Scroll<br/>↓</span>
+  </div>
+
+  <!-- bottom wave -->
+  <div class="hero__wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0e1e38"/>
+    </svg>
+  </div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section class="qs">
+  <div class="qs__inner">
+
+    <!-- image col -->
+    <div class="qs__visual reveal-left">
+      <div class="qs__img-outer">
+        <div class="qs__img-track"></div><!-- decorative vertical track -->
+        <div class="qs__img-wrap">
+          <img
+            src="https://media.istockphoto.com/id/1916729901/es/foto/%C3%A9xito-de-la-reuni%C3%B3n-dos-personas-de-negocios-d%C3%A1ndose-la-mano-de-pie-afuera.jpg?s=612x612&w=0&k=20&c=j9CZRDV77eq-_YZL4vRcE3BiB2DZd_3tNM9eO5YAIyE="
+            alt="Quiénes somos" class="qs__img"
+          />
+          <div class="qs__img-shine"></div>
+        </div>
+        <!-- floating card -->
+        <div class="qs__float-card">
+          <span class="qs__float-num">no c cuantos<sup>+</sup></span>
+          <span class="qs__float-label">Años de<br/>experiencia</span>
+        </div>
+      </div>
+      <!-- dots grid -->
+      <div class="qs__dots" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <pattern id="dot-pat" x="0" y="0" width="15" height="15" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="currentColor"/>
+          </pattern>
+          <rect width="120" height="120" fill="url(#dot-pat)"/>
+        </svg>
+      </div>
     </div>
+
+    <!-- text col -->
+    <div class="qs__text reveal-right">
+      <span class="chip">Quiénes somos</span>
+      <h2 class="qs__title">
+        Líderes en soluciones<br/>
+        <span class="accent-text">logísticas industriales</span>
+      </h2>
+      <div class="slash-bar"></div>
+      <p class="qs__body">
+        Somos una empresa de montacargas especializada en brindar montacargas
+        xdxdxd jeje ya luego texto serio socio
+      </p>
+
+      <div class="qs__stats">
+        <div class="qs__stat">
+          <span class="qs__stat-num" data-target="500">0</span><span class="qs__stat-suffix">+</span>
+          <span class="qs__stat-label">Clientes activos</span>
+        </div>
+        <div class="qs__stat-div"></div>
+        <div class="qs__stat">
+          <span class="qs__stat-num" data-target="12">0</span>
+          <span class="qs__stat-label">Estados cubiertos</span>
+        </div>
+        <div class="qs__stat-div"></div>
+        <div class="qs__stat">
+          <span class="qs__stat-num" data-target="98">0</span><span class="qs__stat-suffix">%</span>
+          <span class="qs__stat-label">Satisfacción</span>
+        </div>
+      </div>
     </div>
-</div>
-<div class='historia'>
-    <div class="historia-container">
-    <div class="historia-text">
-    <h2>Nuestra Historia</h2>
-    <p>la empresa se fundo en el año 2000 por blablabla</p>
+
+  </div>
+</section>
+
+<!-- ══ HISTORIA — full-bleed image + text overlap ════════════════════════ -->
+<section class="hist">
+
+  <!-- full-bleed image -->
+  <div class="hist__img-wrap reveal">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElnqax8pJo_OCM6nwMjjIs9VN_jhtS606_w&s"
+      alt="Historia" class="hist__img"
+    />
+    <div class="hist__img-overlay"></div>
+    <div class="hist__img-label">Nuestras instalaciones</div>
+  </div>
+
+  <!-- overlapping text card -->
+  <div class="hist__card reveal-right">
+    <span class="chip chip--yellow">Nuestra historia</span>
+    <h2 class="hist__title">
+      De taller a referente<br/>nacional
+    </h2>
+    <div class="slash-bar slash-bar--dark"></div>
+    <p class="hist__body">
+      Fundada no c cuando ya maria nos confirma los datos si o no
+      me pashe me pashe
+    </p>
+
+    <!-- vertical timeline -->
+    <div class="vtl">
+      <div class="vtl__track"></div>
+      <div class="vtl__item">
+        <div class="vtl__dot"></div>
+        <div>
+          <strong>fecha</strong>
+          <span>Fundación de la empresa</span>
+        </div>
+      </div>
+      <div class="vtl__item">
+        <div class="vtl__dot"></div>
+        <div>
+          <strong>otra fecha</strong>
+          <span>otro dato importante</span>
+        </div>
+      </div>
+      <div class="vtl__item">
+        <div class="vtl__dot"></div>
+        <div>
+          <strong>fecha random</strong>
+          <span>dato importante de nuevo :v</span>
+        </div>
+      </div>
+      <div class="vtl__item vtl__item--active">
+        <div class="vtl__dot vtl__dot--active"></div>
+        <div>
+          <strong>Hoy</strong>
+          <span>Dato god</span>
+        </div>
+      </div>
     </div>
-    <div class="historia-img">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSElnqax8pJo_OCM6nwMjjIs9VN_jhtS606_w&s" alt="historia" class="historia-img">
+  </div>
+
+</section>
+
+<!-- MISIÓN · VISIÓN · VALORES -->
+<section class="mvv">
+  <!-- background pattern -->
+  <div class="mvv__bg-hex" aria-hidden="true"></div>
+
+  <div class="mvv__header reveal">
+    <span class="chip">Nuestra filosofía</span>
+    <h2 class="mvv__title">Lo que nos mueve<br/><span class="accent-text">cada día</span></h2>
+  </div>
+
+  <div class="mvv__grid">
+
+    <div class="mvv__card reveal reveal--delay1">
+      <div class="mvv__card-glow"></div>
+      <div class="mvv__icon">
+        <!-- target icon -->
+        <svg viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+          <circle cx="24" cy="24" r="12" stroke="currentColor" stroke-width="2"/>
+          <circle cx="24" cy="24" r="4"  fill="currentColor"/>
+          <line x1="24" y1="2"  x2="24" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="24" y1="36" x2="24" y2="46" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="2"  y1="24" x2="12" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="36" y1="24" x2="46" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="mvv__card-num">01</div>
+      <h3>Misión</h3>
+      <p>Imposible</p>
+      <div class="mvv__card-footer">
+        <span class="mvv__card-tag">Quiénes somos</span>
+      </div>
     </div>
-</div>
-</div>
-<div class='mision-vision-valores'>
-<div class='mision'>
-    <h2>Nuestra Mision</h2>
-    <img src="https://png.pngtree.com/png-vector/20190514/ourmid/pngtree-img-file-format-icon-design-png-image_1041703.jpg" alt="mision" class="mision-img">
-    <p>El texto que explique la mision de esta empresa(si tiene)</p>
-</div>
-<div class='vision'>
-    <h2>Nuestra Vision</h2>
-    <p>Texto que explica la vision de la empresa </p>
-    <img src="https://png.pngtree.com/png-vector/20190514/ourmid/pngtree-img-file-format-icon-design-png-image_1041703.jpg" alt="vision" class="vision-img">
-</div>
-<!--No se si la empresa tenga valores, realmente no se cuanta informacion tenemos de la empresa -->
-<div class='valores'>
-    <h2>Nuestros Valores</h2>
-    <img src="https://png.pngtree.com/png-vector/20190514/ourmid/pngtree-img-file-format-icon-design-png-image_1041703.jpg" alt="valores" class="valores-img">
-    <p>pueden ser tarjetitas o no se dependera de si la empresa tiene valores</p>
-</div>
-<div>
-<style>
-    .logo{
-    margin: 0;
-    padding: 0;
-    background-image: url('https://cdn.pixabay.com/photo/2020/05/27/17/08/building-5228101_1280.jpg');
-    background-size: cover;       /* Cubre toda la pantalla */
-    background-position: center;  /* Centra la imagen */
-    background-attachment: fixed; /* Fija la imagen al hacer scroll */
-    background-repeat: no-repeat; /* No repite la imagen */
-    height: 50vh;                /* Altura igual al 100% de la ventana */
+
+    <div class="mvv__card mvv__card--featured reveal reveal--delay2">
+      <div class="mvv__card-glow mvv__card-glow--yellow"></div>
+      <div class="mvv__icon">
+        <!-- eye icon -->
+        <svg viewBox="0 0 48 48" fill="none">
+          <path d="M4 24C4 24 12 10 24 10C36 10 44 24 44 24C44 24 36 38 24 38C12 38 4 24 4 24Z"
+                stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="24" cy="24" r="7" stroke="currentColor" stroke-width="2"/>
+          <circle cx="24" cy="24" r="2.5" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="mvv__card-num">02</div>
+      <h3>Visión</h3>
+      <p>Ver xd</p>
+      <div class="mvv__card-footer">
+        <span class="mvv__card-tag mvv__card-tag--yellow">Hacia el futuro</span>
+      </div>
+    </div>
+
+    <div class="mvv__card reveal reveal--delay3">
+      <div class="mvv__card-glow"></div>
+      <div class="mvv__icon">
+        <!-- star icon -->
+        <svg viewBox="0 0 48 48" fill="none">
+          <path d="M24 5L28.8 17.6H42.4L31.8 25.4L35.6 38L24 30.2L12.4 38L16.2 25.4L5.6 17.6H19.2L24 5Z"
+                stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="mvv__card-num">03</div>
+      <h3>Valores</h3>
+      <ul class="mvv__values">
+        <li><span class="mvv__val-arrow">→</span>Integridad</li>
+        <li><span class="mvv__val-arrow">→</span>Innovación</li>
+        <li><span class="mvv__val-arrow">→</span>Compromiso</li>
+        <li><span class="mvv__val-arrow">→</span>Seguridad</li>
+        <li><span class="mvv__val-arrow">→</span>Excelencia</li>
+      </ul>
+      <div class="mvv__card-footer">
+        <span class="mvv__card-tag">Nuestro ADN</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ STYLES ════════════════════════════════════════════════════════════ -->
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Epilogue:ital,wght@0,300;0,400;0,500;1,300;1,700&display=swap');
+
+  /* ── tokens ── */
+  :root {
+    --navy:    #0e1e38;
+    --navy2:   #162840;
+    --navy3:   #1d3356;
+    --yellow:  #f5a623;
+    --yellow2: #ffc14d;
+    --white:   #ffffff;
+    --cream:   #f5f3ee;
+    --muted:   #7d8fa3;
+    --dark:    #060f1e;
+    --ease:    cubic-bezier(.22,.8,.36,1);
+  }
+
+  /* ── shared utilities ── */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 0.3rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1.1rem;
+    background: var(--yellow);
+    color: var(--navy);
+  }
+  .chip--yellow {
+    background: rgba(245,166,35,0.15);
+    color: var(--yellow);
+    border: 1px solid rgba(245,166,35,0.3);
+  }
+  .accent-text { color: var(--yellow); }
+
+  .slash-bar {
+    width: 48px;
+    height: 4px;
+    background: var(--yellow);
+    margin-bottom: 1.4rem;
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+    border-radius: 2px;
+  }
+  .slash-bar--dark { background: var(--navy); }
+
+  /* ── scroll reveal ── */
+  .reveal, .reveal-left, .reveal-right {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.75s var(--ease), transform 0.75s var(--ease);
+  }
+  .reveal-left  { transform: translateX(-50px); }
+  .reveal-right { transform: translateX(50px); }
+  .reveal--delay1 { transition-delay: 0.12s; }
+  .reveal--delay2 { transition-delay: 0.22s; }
+  .reveal--delay3 { transition-delay: 0.34s; }
+
+  .is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* ══ HERO ══════════════════════════════════════════════════════════════ */
+  .hero {
     position: relative;
-    }
-    .logo h2{
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    font-size: 3rem;
-    font-weight: bold;
+    height: 56vh;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
 
+  .hero__parallax {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    inset: -15% 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    will-change: transform;
+  }
 
-    transform: translate(-50%, -50%); /* ⭐ centra perfecto */
-    }
-    .quienes-somos{
-        width: 100%;
-        padding: 30px;  /* mantiene la altura parecida */
-        background: #1B2A4A;
-        }
-        .quienes-somos-text h1{
-            color: rgb(243, 122, 23);
-            font-size: 30px;
-            margin-bottom: 10px;
-            font-family: 'Roboto', sans-serif;
-            text-align: left;
-        }
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(120deg,
+        rgba(6,15,30,0.92) 0%,
+        rgba(6,15,30,0.65) 55%,
+        rgba(6,15,30,0.3)  100%);
+    z-index: 1;
+  }
 
-        .quienes-somos-text h1::after{
-            content: '';
-            display: block;
-            width: 200px;
-            height: 5px;
-            background-color: #F5A623; /* Personalizar color */
-            margin: 0px 0 0 0px; /* Centrar debajo del título */
-            clip-path: polygon(
-            0 0,
-            100% 0,
-            90% 50%,
-            100% 100%,
-            0 100%
-            );
-        }
-        .quienes-somos-container{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 60px; /* más aire visual */
-        flex-direction: row-reverse;
-        }
-        .quienes-somos-text{
-            flex: 1;
-        }
+  /* SVG grain texture overlay */
+  .hero__grain {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+    pointer-events: none;
+  }
 
-        .quienes-somos-text p{
-            color: #fff;
-            font-size: 20px;
-            line-height: 1.5;
-            font-family: 'Roboto', sans-serif;
-            text-align: left;
-        }
-        .quienes-somos-img{
-            flex: 1;
-            border-width: 5px;
-        }
-        .quienes-somos-img img{
-            width: auto;   /* controla tamaño fijo */
-            height: 400px;
-            border-radius: 10px;
-        }
-        /*historia part*/
-        .historia{
-        width: 100%;
-        padding: 30px;  /* mantiene la altura parecida */
-        background: #F5A623;
-        }
-        .historia-container{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0px; /* más aire visual */
-            flex-direction: row-reverse;
-        }
-         .historia-text h2{
-            color: #1B2A4A;
-            font-size: 30px;
-            margin-bottom: 10px;
-            font-family: 'Roboto', sans-serif;
-            text-align: left;
-        }
+  .hero__inner {
+    position: relative;
+    z-index: 3;
+    padding: 0 clamp(2rem, 8vw, 9rem);
+  }
 
-        .historia-text h2::after{
-            content: '';
-            display: block;
-            width: 200px;
-            height: 5px;
-            margin: 0px 0 0 0px; /* Centrar debajo del título */
-            clip-path: polygon(
-            0 0,
-            100% 0,
-            90% 50%,
-            100% 100%,
-            0 100%
-            );
-            background-color: rgb(233, 123, 20); /* Personalizar color */
-        }
+  .hero__meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 1.4rem;
+  }
+  .hero__line {
+    flex: 0 0 32px;
+    height: 1px;
+    background: rgba(255,255,255,0.25);
+  }
 
-        .historia-text p{
-            color: #333;
-            font-size: 20px;
-            line-height: 1.5;
-            font-family: 'Roboto', sans-serif;
-            text-align: left;
-        }
-        .historia-img{
-            flex: 0.5;
-            border-width: 5px;
-        }
-        .historia-img img{
-            width: 500px;   /* ancho fijo en vez de auto */
-            height: 350px;
-            border-radius: 10px;
-            object-fit: cover;  /* para que no se deforme */
-        }
-        /* Mision, vision y valores */
-        .mision-vision-valores {
-        display: flex;
-        flex-direction: row; /* explícito para que vaya en fila horizontal */
-        gap: 20px;
-        justify-content: center;
-        padding: 40px;
-        }
-        .mision{
-        margin-bottom: 20px;
-        padding: 10px;
-        border-color: #e0f007;
-        border-bottom-radius: 10px;
-        box-bottom-shadow: 0 0 10px #ergb(7, 7, 4)/* Sombra personalizada */
-        }
-         .mision h2{
-            color: blue;
-            font-size: 24px;
-            margin-bottom: 10px;
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-        }
+  .hero__title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.0;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+  }
+  .hero__title em {
+    font-style: normal;
+    color: var(--yellow);
+    position: relative;
+  }
+  /* underline squiggle */
+  .hero__title em::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0; right: 0;
+    height: 4px;
+    background: var(--yellow);
+    clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+    opacity: 0.5;
+  }
 
-        .mision h2::after{
-            content: '';
-            display: block;
-            width: 150px;
-            height: 5px;
-            background-color: rgb(233, 123, 20); /* Personalizar color */
-            margin: 5px auto 0; /* Centrar debajo del título */
-        }
+  .hero__sub {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.38);
+  }
 
-        .mision p{
-            color: #333;
-            font-size: 16px;
-            line-height: 1.5;
-            font-family: 'Roboto', sans-serif;
-            text-align: justify;
-        }
-        .vision{
-        margin-bottom: 20px;
-        padding: 10px;
-        border-color: #e0f007;
-        border-bottom-radius: 10px;
-        box-bottom-shadow: 0 0 10px #ergb(7, 7, 4)/* Sombra personalizada */
-        }
-         .vision h2{
-            color: blue;
-            font-size: 24px;
-            margin-bottom: 10px;
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-        }
+  /* rotating badge */
+  .hero__corner-badge {
+    position: absolute;
+    bottom: 3.5rem;
+    right: clamp(2rem, 6vw, 5rem);
+    z-index: 3;
+    width: 80px; height: 80px;
+    display: grid;
+    place-items: center;
+  }
+  .hero__corner-ring {
+    position: absolute;
+    inset: 0;
+    color: rgba(245,166,35,0.5);
+    animation: spinSlow 12s linear infinite;
+  }
+  .hero__corner-text {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 1.5;
+  }
 
-        .vision h2::after{
-            content: '';
-            display: block;
-            width: 150px;
-            height: 5px;
-            background-color: rgb(233, 123, 20); /* Personalizar color */
-            margin: 5px auto 0; /* Centrar debajo del título */
-        }
+  /* wave divider */
+  .hero__wave {
+    position: absolute;
+    bottom: -1px; left: 0; right: 0;
+    z-index: 4;
+    line-height: 0;
+  }
+  .hero__wave svg { width: 100%; height: 50px; }
 
-        .vision p{
-            color: #333;
-            font-size: 16px;
-            line-height: 1.5;
-            font-family: 'Roboto', sans-serif;
-            text-align: justify;
-        }
-        .valores{
-        margin-bottom: 20px;
-        padding: 10px;
-        border-color: #e0f007;
-        border-bottom-radius: 10px;
-        box-bottom-shadow: 0 0 10px #ergb(7, 7, 4)/* Sombra personalizada */
-        }
-         .valores h2{
-            color: blue;
-            font-size: 24px;
-            margin-bottom: 10px;
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-        }
+  /* ══ QUIÉNES SOMOS ══════════════════════════════════════════════════════ */
+  .qs {
+    background: var(--navy);
+    padding: clamp(5rem, 10vw, 9rem) clamp(2rem, 8vw, 9rem);
+  }
+  .qs__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
-        .valores h2::after{
-            content: '';
-            display: block;
-            width: 150px;
-            height: 5px;
-            background-color: rgb(233, 123, 20); /* Personalizar color */
-            margin: 5px auto 0; /* Centrar debajo del título */
-        }
+  /* visual side */
+  .qs__visual { position: relative; }
 
-        .valores p{
-            color: #333;
-            font-size: 16px;
-            line-height: 1.5;
-            font-family: 'Roboto', sans-serif;
-            text-align: justify;
-        }
+  .qs__img-outer {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .qs__img-track {
+    position: absolute;
+    left: 0; top: 10%; bottom: 10%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent, var(--yellow), transparent);
+    opacity: 0.5;
+  }
+  .qs__img-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+  }
+  .qs__img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s var(--ease), filter 0.4s;
+    filter: brightness(0.88) contrast(1.05) saturate(0.9);
+  }
+  .qs__img-wrap:hover .qs__img {
+    transform: scale(1.04);
+    filter: brightness(0.95) contrast(1.05) saturate(1);
+  }
+  /* shine sweep on hover */
+  .qs__img-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.7s ease;
+    pointer-events: none;
+  }
+  .qs__img-wrap:hover .qs__img-shine { transform: translateX(100%); }
 
+  /* floating stat card */
+  .qs__float-card {
+    position: absolute;
+    bottom: -1.8rem;
+    right: -1.8rem;
+    background: var(--yellow);
+    color: var(--navy);
+    border-radius: 14px;
+    padding: 1.2rem 1.6rem;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    text-align: center;
+    z-index: 2;
+  }
+  .qs__float-num {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .qs__float-num sup { font-size: 1rem; vertical-align: super; }
+  .qs__float-label {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    line-height: 1.3;
+  }
 
-        /*tipo de letras*/
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  /* dots accent */
+  .qs__dots {
+    position: absolute;
+    bottom: -2rem;
+    left: -1.5rem;
+    width: 120px; height: 120px;
+    color: rgba(245,166,35,0.2);
+    z-index: 0;
+  }
 
+  /* text side */
+  .qs__title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.8rem;
+  }
+  .qs__body {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 2.5rem;
+  }
+
+  /* stats */
+  .qs__stats {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .qs__stat { text-align: left; }
+  .qs__stat-num {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--yellow);
+    line-height: 1;
+  }
+  .qs__stat-suffix {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    color: var(--yellow);
+    vertical-align: super;
+    margin-left: 1px;
+  }
+  .qs__stat-label {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--muted);
+    margin-top: 0.2rem;
+    display: block;
+  }
+  .qs__stat-div {
+    width: 1px;
+    height: 48px;
+    background: rgba(255,255,255,0.1);
+    flex-shrink: 0;
+  }
+
+  /* ══ HISTORIA ════════════════════════════════════════════════════════════ */
+  .hist {
+    background: var(--cream);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+  }
+
+  .hist__img-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  .hist__img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.7) brightness(0.85);
+    transition: filter 0.5s;
+  }
+  .hist__img-wrap:hover .hist__img {
+    filter: saturate(1) brightness(0.9);
+  }
+  .hist__img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 60%, var(--cream) 100%);
+    pointer-events: none;
+  }
+  .hist__img-label {
+    position: absolute;
+    bottom: 1.5rem; left: 1.5rem;
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(4px);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+  }
+
+  /* overlapping card */
+  .hist__card {
+    padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hist__title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.9rem, 3vw, 2.8rem);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.8rem;
+  }
+  .hist__body {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.97rem;
+    font-weight: 300;
+    color: #5a6a7e;
+    line-height: 1.85;
+    margin-bottom: 2.2rem;
+  }
+
+  /* vertical timeline */
+  .vtl { position: relative; padding-left: 1.5rem; }
+  .vtl__track {
+    position: absolute;
+    left: 5px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--yellow), rgba(245,166,35,0.1));
+  }
+  .vtl__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    position: relative;
+    transition: transform 0.2s;
+  }
+  .vtl__item:hover { transform: translateX(4px); }
+  .vtl__dot {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 2px solid rgba(245,166,35,0.4);
+    flex-shrink: 0;
+    margin-top: 3px;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .vtl__dot--active,
+  .vtl__item:hover .vtl__dot {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    transform: scale(1.25);
+    box-shadow: 0 0 0 4px rgba(245,166,35,0.2);
+  }
+  .vtl__item strong {
+    display: block;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .vtl__item span {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.83rem;
+    color: #8a97ab;
+  }
+  .vtl__item--active strong { color: var(--yellow); }
+
+  /* ══ MVV ══════════════════════════════════════════════════════════════════ */
+  .mvv {
+    background: var(--navy);
+    padding: clamp(5rem, 10vw, 9rem) clamp(2rem, 8vw, 9rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* hex pattern background */
+  .mvv__bg-hex {
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V17L28 1l28 16v33z' fill='none' stroke='%23fff' stroke-width='1'/%3E%3Cpath d='M28 100L0 84V51l28-16 28 16v33z' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 56px 100px;
+    pointer-events: none;
+  }
+
+  .mvv__header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+  }
+  .mvv__title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  .mvv__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mvv__card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px;
+    padding: 2.5rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+  .mvv__card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(245,166,35,0.25);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+  }
+
+  /* glow blob */
+  .mvv__card-glow {
+    position: absolute;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+    top: -60px; right: -60px;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .mvv__card-glow--yellow {
+    background: radial-gradient(circle, rgba(245,166,35,0.15) 0%, transparent 70%);
+  }
+  .mvv__card:hover .mvv__card-glow { opacity: 1.5; }
+
+  /* top accent line animation */
+  .mvv__card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s var(--ease);
+    border-radius: 20px 20px 0 0;
+  }
+  .mvv__card:hover::before { transform: scaleX(1); }
+
+  /* featured card */
+  .mvv__card--featured {
+    background: linear-gradient(145deg, rgba(245,166,35,0.12) 0%, rgba(245,166,35,0.04) 100%);
+    border-color: rgba(245,166,35,0.2);
+  }
+  .mvv__card--featured::before { transform: scaleX(1); }
+
+  .mvv__icon {
+    width: 44px; height: 44px;
+    color: var(--yellow);
+    margin-bottom: 1.6rem;
+    transition: transform 0.3s var(--ease);
+  }
+  .mvv__card:hover .mvv__icon { transform: scale(1.1) rotate(-5deg); }
+
+  .mvv__card-num {
+    position: absolute;
+    top: 1.5rem; right: 1.8rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+    transition: color 0.3s;
+  }
+  .mvv__card:hover .mvv__card-num { color: rgba(255,255,255,0.07); }
+
+  .mvv__card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+  }
+  .mvv__card p {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.8;
+    flex: 1;
+  }
+
+  /* valores list */
+  .mvv__values {
+    list-style: none; padding: 0;
+    display: flex; flex-direction: column;
+    gap: 0; flex: 1;
+  }
+  .mvv__values li {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: color 0.2s, padding-left 0.2s;
+    cursor: default;
+  }
+  .mvv__values li:last-child { border-bottom: none; }
+  .mvv__values li:hover { color: var(--white); padding-left: 4px; }
+  .mvv__val-arrow {
+    color: var(--yellow);
+    font-size: 0.75rem;
+    transition: transform 0.2s;
+  }
+  .mvv__values li:hover .mvv__val-arrow { transform: translateX(4px); }
+
+  .mvv__card-footer {
+    margin-top: 1.8rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .mvv__card-tag {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.2);
+  }
+  .mvv__card-tag--yellow { color: rgba(245,166,35,0.6); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .qs__inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hist       { grid-template-columns: 1fr; }
+    .hist__img-wrap { min-height: 300px; }
+    .hist__img { min-height: 300px; }
+    .hist__img-overlay { background: linear-gradient(to bottom, transparent 60%, var(--cream) 100%); }
+    .mvv__grid  { grid-template-columns: 1fr; }
+    .qs__float-card { bottom: 1rem; right: 1rem; }
+  }
+  @media (max-width: 600px) {
+    .qs__stats { flex-wrap: wrap; gap: 1.5rem; }
+    .hero__corner-badge { display: none; }
+  }
 </style>
+
+<!-- ══ SCRIPT ════════════════════════════════════════════════════════════ -->
+<script is:inline>
+(function () {
+
+  /* ── Scroll reveal ──────────────────────────────────────────────────── */
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('is-visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  /* ── Parallax hero ─────────────────────────────────────────────────── */
+  const parallax = document.getElementById('hero-parallax');
+  if (parallax) {
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      parallax.style.transform = `translateY(${y * 0.35}px)`;
+    }, { passive: true });
+  }
+
+  /* ── Count-up numbers ──────────────────────────────────────────────── */
+  const counters = document.querySelectorAll('.qs__stat-num[data-target]');
+  const countObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el     = e.target;
+      const target = +el.dataset.target;
+      const dur    = 1600;
+      const step   = 16;
+      const inc    = target / (dur / step);
+      let   cur    = 0;
+      const timer  = setInterval(() => {
+        cur += inc;
+        if (cur >= target) { cur = target; clearInterval(timer); }
+        el.textContent = Math.floor(cur);
+      }, step);
+      countObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => countObs.observe(c));
+
+})();
+</script>
