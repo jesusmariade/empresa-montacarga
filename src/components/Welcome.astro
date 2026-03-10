@@ -1,210 +1,294 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+// HeroVideo.astro
+// Cambia estos valores:
+const titulo = "Soluciones en Montacargas";
+const subtitulo = "Potencia, precisión y confiabilidad para tu operación industrial.";
 ---
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build"
-				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
-			>
-			<h1>
-				To get started, open the <code><pre>src/pages</pre></code> directory in your project.
-			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">Read our docs</a>
-				<a href="https://astro.build/chat"
-					>Join our Discord <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"
-						><path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path></svg
-					>
-				</a>
-			</section>
-		</section>
-	</main>
+<section class="hero">
+  <!-- Video de fondo -->
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="/videos/Montacargaloop1.mp4" type="video/mp4">
+  </video>
 
-	<a href="https://astro.build/blog/astro-5/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"
-			><path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"></path></svg
-		>
-		<h2>What's New in Astro 5.0?</h2>
-		<p>
-			From content layers to server islands, click to learn more about the new features and
-			improvements in Astro 5.0
-		</p>
-	</a>
-</div>
+  <!-- Capas de efecto -->
+  <div class="overlay"></div>
+  <div class="gradient-bottom"></div>
+  <div class="gradient-top"></div>
+  <div class="noise"></div>
+
+  <!-- Líneas industriales decorativas -->
+  <div class="grid-lines">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Contenido -->
+  <div class="hero-content">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      <p>Operando desde sepa la vrg jeje</p>
+    </div>
+    <h1 class="titulo">{titulo}</h1>
+    <p class="subtitulo">{subtitulo}</p>
+    <div class="divider"></div>
+  </div>
+
+  <!-- Indicador scroll -->
+  <div class="scroll-indicator">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
 <style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;600;800&family=Barlow:wght@300;400&display=swap');
 
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
+  :root {
+    --amarillo: #F5A800;
+    --blanco: #F0EDE8;
+    --negro: #0A0A0A;
+    --gris: #1A1A1A;
+  }
 
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    font-family: 'Barlow', sans-serif;
+    background: var(--negro);
+  }
 
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
+  /* ── VIDEO ── */
+  .background-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Parallax suave via scale */
+    transform: scale(1.08);
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+  /* ── OVERLAYS ── */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 8, 8, 0.58);
+    z-index: 1;
+  }
 
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
+  .gradient-bottom {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to top, var(--negro) 0%, transparent 100%);
+    z-index: 2;
+  }
 
-	#links {
-		display: flex;
-		gap: 16px;
-	}
+  .gradient-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 25%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%);
+    z-index: 2;
+  }
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
+  /* Textura grain */
+  .noise {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    pointer-events: none;
+  }
 
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
+  /* ── LÍNEAS GRID INDUSTRIALES ── */
+  .grid-lines {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8%;
+    pointer-events: none;
+  }
 
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
+  .grid-lines span {
+    display: block;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(245,168,0,0.12), transparent);
+    animation: fadeInLine 1.5s ease forwards;
+    opacity: 0;
+  }
 
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
+  .grid-lines span:nth-child(1) { animation-delay: 0.2s; }
+  .grid-lines span:nth-child(2) { animation-delay: 0.4s; }
+  .grid-lines span:nth-child(3) { animation-delay: 0.6s; }
+  .grid-lines span:nth-child(4) { animation-delay: 0.8s; }
 
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
+  @keyframes fadeInLine {
+    to { opacity: 1; }
+  }
 
-	pre {
-		font-family:
-			ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono',
-			monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
+  /* ── CONTENIDO ── */
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 0 8%;
+    max-width: 860px;
+  }
 
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
+  /* Eyebrow */
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: slideUp 0.7s ease 0.3s forwards;
+  }
 
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--amarillo);
+    box-shadow: 0 0 10px var(--amarillo);
+    animation: pulse 2s ease-in-out infinite;
+  }
 
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 6px var(--amarillo); }
+    50% { box-shadow: 0 0 18px var(--amarillo); }
+  }
 
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
+  .eyebrow p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--amarillo);
+    margin: 0;
+  }
 
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
+  /* Título */
+  .titulo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: var(--blanco);
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: slideUp 0.8s ease 0.55s forwards;
+  }
 
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
+  /* Resalte amarillo en última palabra */
+  .titulo::after {
+    content: '';
+  }
 
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
+  /* Subtítulo */
+  .subtitulo {
+    font-family: 'Barlow', sans-serif;
+    font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+    font-weight: 300;
+    color: rgba(240, 237, 232, 0.72);
+    max-width: 480px;
+    line-height: 1.6;
+    margin: 0 0 28px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease 0.8s forwards;
+  }
 
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
+  /* Divider */
+  .divider {
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--amarillo), transparent);
+    animation: expandWidth 1s ease 1.1s forwards;
+  }
 
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
+  @keyframes expandWidth {
+    to { width: 120px; }
+  }
 
-		#links {
-			flex-wrap: wrap;
-		}
+  /* ── ANIMACIONES ── */
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-		#links a.button {
-			padding: 14px 18px;
-		}
+  /* ── SCROLL INDICATOR ── */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    right: 8%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.4s forwards;
+  }
 
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
+  .scroll-indicator span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: rgba(240, 237, 232, 0.4);
+    writing-mode: vertical-rl;
+  }
 
-		h1 {
-			line-height: 1.5;
-		}
-	}
+  .scroll-line {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, rgba(245,168,0,0.6), transparent);
+    animation: scrollPulse 2s ease-in-out infinite 1.6s;
+  }
+
+  @keyframes scrollPulse {
+    0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+    50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    100% { transform: scaleY(1); transform-origin: top; opacity: 0; }
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
 </style>
+
+<script>
+  // Efecto parallax suave al hacer scroll
+  const video = document.querySelector('.background-video') as HTMLVideoElement;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const hero = document.querySelector('.hero') as HTMLElement;
+    const heroHeight = hero?.offsetHeight ?? 0;
+
+    if (scrollY < heroHeight) {
+      const progress = scrollY / heroHeight; // 0 → 1
+      const translateY = progress * 60; // mueve el video hacia abajo
+      const scale = 1.08 + progress * 0.04;
+      video.style.transform = `scale(${scale}) translateY(${translateY}px)`;
+    }
+  }, { passive: true });
+</script>

@@ -1,0 +1,162 @@
+<div class="header">
+    <a href="/" class="logo">Logo Empresa</a>
+
+    <nav class="nav">
+        <a href="./Catalogo">Montacargas</a>
+        <a href="./Nosotros">Nosotros</a>
+        <a href="./Contacto" class='contacto'>Contactanos!</a>
+    </nav>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+  :root {
+    --navy-deep: #111e30;
+    --navy: #1B263B;
+    --navy-mid: #223A5E;
+    --yellow: #FFD60A;
+    --yellow-dark: #F4B400;
+    --text-muted: #a8b4c4;
+    --white: #FFFFFF;
+  }
+
+  /* HEADER BASE */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 56px;
+    height: 100px;
+    font-family: 'DM Sans', 'Century Gothic', sans-serif;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--navy-mid) 100%);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.06), 0 4px 24px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: height 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Línea amarilla inferior sutil */
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+  }
+
+  /* HEADER SCROLL */
+  .header.scrolled {
+    height: 60px;
+    background: linear-gradient(90deg, var(--navy-deep) 0%, #1a2d47 100%);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 8px 32px rgba(0,0,0,0.35);
+  }
+
+  .header.scrolled::after {
+    opacity: 0.6;
+  }
+
+  /* LOGO */
+  .logo {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  /* Punto amarillo decorativo en el logo */
+  .logo::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: var(--yellow);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .logo:hover { opacity: 0.8; }
+
+  /* NAV */
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav a {
+    margin-left: 32px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+    padding: 4px 0;
+    letter-spacing: 0.3px;
+  }
+
+  /* Línea animada */
+  .nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -4px;
+    background: var(--yellow);
+    border-radius: 2px;
+    transition: width 0.25s ease;
+  }
+
+  .nav a:hover {
+    color: var(--white);
+  }
+
+  .nav a:hover::after {
+    width: 100%;
+  }
+
+  /* LINK ACTIVO */
+  .nav a.active {
+    color: var(--white);
+  }
+
+  .nav a.active::after {
+    width: 100%;
+  }
+
+  /* BOTÓN CONTÁCTANOS */
+  .nav a.contacto {
+    background: var(--yellow);
+    color: var(--navy);
+    padding: 8px 20px;
+    border-radius: 6px;
+    margin-left: 40px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 10px rgba(255,214,10,0.25);
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  }
+
+  .nav a.contacto:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,214,10,0.35);
+    color: var(--navy);
+  }
+
+  .nav a.contacto::after {
+    display: none;
+  }
+</style>
