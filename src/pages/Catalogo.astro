@@ -1,13 +1,23 @@
 ---
+import type { Montacargas } from '../interfaces/montacargas';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MontacargasCarrucel from '../components/MontacargasCarrucel.astro';
+const respuesta = await fetch('http://localhost:4321/api/montacargas');
+const montacargas: Montacargas[] = await respuesta.json();
 
 ---
 <Layout>
 	<Header />
 	<h1>Catalogo</h1>
 	<MontacargasCarrucel />
+	<ul>
+  {montacargas.map((m) => (
+    <li>
+      <strong>{m.modelo}</strong> — {m.capacidad} — ${m.precio_renta}
+    </li>
+  ))}
+</ul>
 	<Footer />
 </Layout>

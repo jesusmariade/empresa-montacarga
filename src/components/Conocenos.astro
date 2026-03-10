@@ -1,17 +1,326 @@
 ---
 
 ---
-<div class='experiencia'>
-    <h2>x</h2>
-    <p>Años atendiendote</p>
-</div>
-<div class='clientes'>
-    <h2>y</h2>
-    <p>Clientes satisfechos</p>
-</div>
-<div class='montacargas'>
-    <h2>x</h2>
-    <p>Montacargas en renta</p>
-</div>
 
-<style></style>
+<section class="conocenos">
+
+  <!-- Título -->
+  <div class="conocenos__titulo">
+    <span class="conocenos__eyebrow">Quiénes somos</span>
+    <h2 class="conocenos__heading">Años de <em>experiencia</em><br>que nos respaldan</h2>
+  </div>
+
+  <!-- Tarjetas -->
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <h2 class="contador" data-target="10">0<sup>+</sup></h2>
+      <div class="stat-card__divider"></div>
+      <p class="stat-card__label">Años<br>atendiéndote</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <h2 class="contador" data-target="10000">0<sup>+</sup></h2>
+      <div class="stat-card__divider"></div>
+      <p class="stat-card__label">Clientes<br>satisfechos</p>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"/>
+          <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+          <line x1="12" y1="12" x2="12" y2="16"/>
+          <line x1="10" y1="14" x2="14" y2="14"/>
+        </svg>
+      </div>
+      <h2 class="contador" data-target="200">0<sup>+</sup></h2>
+      <div class="stat-card__divider"></div>
+      <p class="stat-card__label">Montacargas<br>en renta</p>
+    </div>
+
+  </div>
+
+  <!-- Olas -->
+  <div class="ondas">
+    <svg viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs>
+        <path id="ola" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+      </defs>
+      <use href="#ola" class="ola ola-1"/>
+      <use href="#ola" class="ola ola-2" x="50" y="3"/>
+      <use href="#ola" class="ola ola-3" x="0"  y="6"/>
+    </svg>
+  </div>
+
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap');
+
+  :root {
+    --navy:   #0a1628;
+    --yellow: #f5a623;
+    --white:  #f0ece2;
+  }
+
+  /* ─── SECCIÓN ─── */
+  .conocenos {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(160deg, #0a1628 0%, #0d1f3c 55%, #0a1628 100%);
+    padding: 5rem 2rem 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Textura punteada */
+  .conocenos::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(245,166,35,0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+
+  /* Glow central */
+  .conocenos::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(245,166,35,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ─── TÍTULO ─── */
+  .conocenos__titulo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .conocenos__eyebrow {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    border: 1px solid rgba(245,166,35,0.3);
+    padding: 0.3rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 0.9rem;
+    background: rgba(245,166,35,0.06);
+  }
+
+  .conocenos__heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+  }
+
+  .conocenos__heading em {
+    font-style: normal;
+    color: var(--yellow);
+  }
+
+  /* ─── GRID ─── */
+  .stats-grid {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  /* ─── TARJETA ─── */
+  .stat-card {
+    flex: 1;
+    min-width: 200px;
+    max-width: 240px;
+    padding: 2.2rem 1.6rem 2rem;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: default;
+    transition:
+      transform     0.35s cubic-bezier(.34,1.56,.64,1),
+      border-color  0.3s ease,
+      box-shadow    0.3s ease;
+
+    opacity: 0;
+    transform: translateY(28px);
+    animation: cardIn 0.7s cubic-bezier(.34,1.4,.64,1) forwards;
+  }
+
+  .stat-card:nth-child(1) { animation-delay: 0.10s; }
+  .stat-card:nth-child(2) { animation-delay: 0.25s; }
+  .stat-card:nth-child(3) { animation-delay: 0.40s; }
+
+  @keyframes cardIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stat-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(245,166,35,0.45);
+    box-shadow:
+      0 0 0 1px rgba(245,166,35,0.15),
+      0 20px 50px rgba(0,0,0,0.35),
+      0 0 60px rgba(245,166,35,0.06);
+  }
+
+  /* ─── ICONO ─── */
+  .stat-card__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(245,166,35,0.12);
+    border: 1px solid rgba(245,166,35,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.6rem;
+    color: var(--yellow);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  .stat-card:hover .stat-card__icon {
+    background: rgba(245,166,35,0.2);
+    transform: scale(1.08) rotate(-4deg);
+  }
+
+  .stat-card__icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* ─── CONTADOR ─── */
+  .contador {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 400; /* Bebas no tiene weight variable */
+    line-height: 1;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+
+  .stat-card:hover .contador { color: var(--yellow); }
+
+  .contador sup {
+    font-size: 2rem;
+    vertical-align: super;
+    line-height: 0;
+    color: var(--yellow);
+  }
+
+  /* ─── DIVIDER ─── */
+  .stat-card__divider {
+    width: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--yellow), transparent);
+    border-radius: 2px;
+    margin: 0.3rem 0;
+    transition: width 0.3s ease;
+  }
+
+  .stat-card:hover .stat-card__divider { width: 52px; }
+
+  /* ─── LABEL ─── */
+  .stat-card__label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(240,236,226,0.55);
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* ─── OLAS ─── */
+  .ondas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100px;
+    animation: moverOla 10s linear infinite;
+    pointer-events: none;
+  }
+
+  .ondas svg { width: 100%; height: 100%; }
+
+  .ola-1 { fill: rgba(255,255,255,0.04); }
+  .ola-2 { fill: rgba(255,255,255,0.03); }
+  .ola-3 { fill: rgba(10,22,40,0.9); }
+
+  @keyframes moverOla {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 600px) {
+    .stats-grid { flex-direction: column; align-items: center; }
+    .stat-card   { max-width: 100%; width: 100%; }
+  }
+</style>
+
+<!-- Tu mismo script, sin tocar la lógica -->
+<script is:inline>
+document.addEventListener('DOMContentLoaded', () => {
+  const contadores = document.querySelectorAll('.contador');
+
+  contadores.forEach(contador => {
+    const meta      = parseInt(contador.dataset.target);
+    const duracion  = 2000;
+    const intervalo = 20;
+    const pasos     = duracion / intervalo;
+    const incremento = meta / pasos;
+
+    let actual = 0;
+
+    const timer = setInterval(() => {
+      actual += incremento;
+
+      if (actual >= meta) {
+        contador.innerHTML = meta + '<sup>+</sup>'; // mantiene el + como superíndice
+        clearInterval(timer);
+      } else {
+        contador.innerHTML = Math.floor(actual) + '<sup>+</sup>';
+      }
+    }, intervalo);
+  });
+});
+</script>

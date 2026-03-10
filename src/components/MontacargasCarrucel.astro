@@ -1,8 +1,341 @@
 ---
+import type { Montacargas } from '../interfaces/montacargas';
+const respuesta = await fetch('http://localhost:4321/api/montacargas');
+const montacargas: Montacargas[] = await respuesta.json();
 ---
-<div class="Carrucel">
-<h1>aqui van los cuadritos, tengo que llamar los datos de la api(todavia no existe la api)</h1>
-</div>
-<style>
 
+<section id="mc-root">
+  <div class="mc-header">
+    <span class="mc-etiqueta">CATÁLOGO</span>
+    <h2>Montacargas <span class="mc-dorado">disponibles</span></h2>
+  </div>
+
+  <div class="mc-outer">
+    <button class="mc-btn" id="btnIzq">&#8592;</button>
+
+    <div class="mc-clip">
+      <div class="mc-stage" id="mcStage">
+        {montacargas.map((m, i) => (
+          <div class="mc-card" data-index={String(i)}>
+            <div class="mc-card-img">
+              <img src={m.imagen} alt={m.modelo} />
+            </div>
+            <div class="mc-card-body">
+              <h3>{m.modelo}</h3>
+              <div class="mc-tags">
+                <span class="mc-tag">⚖️ {m.capacidad}</span>
+                <span class="mc-tag mc-tag-tipo">⚡ {m.tipo}</span>
+              </div>
+              <span class="mc-badge">{m.para}</span>
+              <p class="mc-precio">${m.precio_renta.toLocaleString()}<span>/mes</span></p>
+              <button class="mc-cta">Ver detalles →</button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <button class="mc-btn" id="btnDer">&#8594;</button>
+  </div>
+
+  <div class="mc-dots" id="mcDots">
+    {montacargas.map((_, i) => (
+      <button class="mc-dot" data-dot={String(i)}></button>
+    ))}
+  </div>
+</section>
+
+<style is:global>
+  #mc-root {
+    padding: 4rem 2rem !important;
+    background: #0a1628 !important;
+    color: white !important;
+    font-family: 'Segoe UI', sans-serif !important;
+    box-sizing: border-box !important;
+  }
+  #mc-root * {
+    box-sizing: border-box !important;
+  }
+  #mc-root .mc-header {
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+  }
+  #mc-root .mc-etiqueta {
+    display: inline-block !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2em !important;
+    color: #f59e0b !important;
+    border: 1px solid rgba(245,158,11,0.4) !important;
+    border-radius: 999px !important;
+    padding: 0.3rem 1rem !important;
+    margin-bottom: 1rem !important;
+    background: rgba(245,158,11,0.08) !important;
+  }
+  #mc-root .mc-header h2 {
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    color: white !important;
+    letter-spacing: -0.02em !important;
+  }
+  #mc-root .mc-dorado {
+    color: #f59e0b !important;
+  }
+
+  /* Contenedor externo: botones + clip alineados */
+  #mc-root .mc-outer {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;    /* ← centra el bloque */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+  /* Este div hace el fade en los bordes SIN afectar los botones */
+  #mc-root .mc-clip {
+    position: relative !important;
+    width: 100% !important;       /* ← ocupa el ancho del padre */
+    height: 480px !important;
+    overflow: hidden !important;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    ) !important;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 15%,
+      black 85%,
+      transparent 100%
+    ) !important;
+}
+
+  /* Stage ocupa todo el clip y permite overflow para las cards laterales */
+  #mc-root .mc-stage {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+  }
+
+  #mc-root .mc-card {
+    position: absolute !important;
+    width: 260px !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: linear-gradient(145deg, #1a3a6b 0%, #112952 100%) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    transition:
+      transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94),
+      opacity   0.55s ease,
+      box-shadow 0.55s ease !important;
+  }
+  #mc-root .mc-card-img {
+    width: 100% !important;
+    height: 150px !important;
+    background: linear-gradient(135deg, #e8eef5, #d0dce8) !important;
+    overflow: hidden !important;
+  }
+  #mc-root .mc-card-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  #mc-root .mc-card-body {
+    padding: 1.1rem 1.3rem 1.3rem !important;
+  }
+  #mc-root .mc-card-body h3 {
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    margin: 0 0 0.7rem 0 !important;
+    color: white !important;
+  }
+  #mc-root .mc-tags {
+    display: flex !important;
+    gap: 0.4rem !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 0.5rem !important;
+  }
+  #mc-root .mc-tag {
+    font-size: 0.72rem !important;
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 999px !important;
+    padding: 0.2rem 0.6rem !important;
+    color: rgba(255,255,255,0.8) !important;
+  }
+  #mc-root .mc-tag-tipo {
+    color: #f59e0b !important;
+    border-color: rgba(245,158,11,0.3) !important;
+    background: rgba(245,158,11,0.08) !important;
+  }
+  #mc-root .mc-badge {
+    display: inline-block !important;
+    font-size: 0.68rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: #60a5fa !important;
+    margin-bottom: 0.7rem !important;
+  }
+  #mc-root .mc-precio {
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    color: #f59e0b !important;
+    margin: 0 0 0.9rem 0 !important;
+    line-height: 1 !important;
+  }
+  #mc-root .mc-precio span {
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    color: rgba(255,255,255,0.5) !important;
+  }
+  #mc-root .mc-cta {
+    width: 100% !important;
+    background: linear-gradient(90deg, #f59e0b, #d97706) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    color: #0a1628 !important;
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    padding: 0.55rem 1rem !important;
+    cursor: pointer !important;
+    display: block !important;
+  }
+ #mc-root .mc-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    color: white !important;
+    font-size: 1.1rem !important;
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    z-index: 30 !important;
+    transition: background 0.2s !important;
+}
+  #mc-root .mc-btn:hover {
+    background: rgba(245,158,11,0.2) !important;
+    border-color: rgba(245,158,11,0.5) !important;
+    color: #f59e0b !important;
+  }
+  #mc-root .mc-dots {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+  #mc-root .mc-dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    background: rgba(255,255,255,0.2) !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    transition: background 0.3s, width 0.3s !important;
+  }
+  #mc-root .mc-dot.activo {
+    background: #f59e0b !important;
+    width: 24px !important;
+    border-radius: 4px !important;
+  }
+  #mc-root #btnIzq {
+    left: 8px !important;
+}
+
+#mc-root #btnDer {
+    right: 8px !important;
+}
 </style>
+
+<script is:inline>
+(function () {
+  const cards = Array.from(document.querySelectorAll('#mc-root .mc-card'));
+  const dots  = Array.from(document.querySelectorAll('#mc-root .mc-dot'));
+  const total = cards.length;
+  let current = 0;
+  let timer;
+
+  function getCfg(pos) {
+    switch (pos) {
+      case  0: return { x:    0, scale: 1.00, opacity: 1,    zIndex: 10 };
+      case  1: return { x:  210, scale: 0.78, opacity: 0.90, zIndex:  7 };
+      case -1: return { x: -210, scale: 0.78, opacity: 0.90, zIndex:  7 };
+      case  2: return { x:  370, scale: 0.60, opacity: 0.45, zIndex:  4 };
+      case -2: return { x: -370, scale: 0.60, opacity: 0.45, zIndex:  4 };
+      default: return null;
+    }
+  }
+
+  function update() {
+    cards.forEach((card, i) => {
+      let pos = i - current;
+      if (pos >  Math.floor(total / 2)) pos -= total;
+      if (pos < -Math.floor(total / 2)) pos += total;
+
+      const cfg = getCfg(pos);
+
+      if (!cfg) {
+        card.style.setProperty('opacity', '0', 'important');
+        card.style.setProperty('pointer-events', 'none', 'important');
+        return;
+      }
+
+      card.style.setProperty('opacity', String(cfg.opacity), 'important');
+      card.style.setProperty('z-index', String(cfg.zIndex), 'important');
+      card.style.setProperty('pointer-events', 'auto', 'important');
+      card.style.setProperty(
+        'transform',
+        `translate(calc(-50% + ${cfg.x}px), -50%) scale(${cfg.scale})`,
+        'important'
+      );
+      card.style.setProperty(
+        'box-shadow',
+        cfg.zIndex === 10
+          ? '0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(245,158,11,0.2)'
+          : '0 8px 24px rgba(0,0,0,0.4)',
+        'important'
+      );
+    });
+
+    dots.forEach((d, i) => d.classList.toggle('activo', i === current));
+  }
+
+  function next() { current = (current + 1) % total; update(); }
+  function prev() { current = (current - 1 + total) % total; update(); }
+  function startAuto() { timer = setInterval(next, 3800); }
+  function resetAuto() { clearInterval(timer); startAuto(); }
+
+  document.getElementById('btnDer').addEventListener('click', () => { next(); resetAuto(); });
+  document.getElementById('btnIzq').addEventListener('click', () => { prev(); resetAuto(); });
+
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => {
+      if (i !== current) { current = i; update(); resetAuto(); }
+    });
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { current = i; update(); resetAuto(); });
+  });
+
+  update();
+  startAuto();
+})();
+</script>
